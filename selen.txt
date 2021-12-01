@@ -1,0 +1,53 @@
+package Europe;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class England {
+
+	
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mayor\\Downloads\\chromedriver_win32 (11)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://workplaceplus.mitie.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(4000);
+		driver.findElement(By.id("UserCode")).sendKeys("samueladekoya1@yahoo.co.uk");
+		Thread.sleep(4000);
+		driver.findElement(By.id("Password")).sendKeys("Marvy@2013");
+		Thread.sleep(4000);
+		driver.findElement(By.id("idLogIn")).click();
+		driver.findElement(By.xpath("//*[@id=\"avatar-menu\"]/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"user-settings\"]/li[4]/a")).click();
+	    String at = driver.getCurrentUrl();
+	    String et = "https://workplaceplus.mitie.com/login.aspx";
+	    System.out.println(at);
+	    driver.close();
+	    if(at.equalsIgnoreCase(et)){
+	    	System.out.println("Test Successful");
+	    	
+	    }
+	    else
+	    {
+	    	System.out.println("Test Failure");
+	    }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+	}
+
+}
